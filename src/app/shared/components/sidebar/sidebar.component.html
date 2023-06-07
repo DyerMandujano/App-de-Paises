@@ -1,0 +1,27 @@
+<h2>BUSQUEDAS DE PAISES</h2>
+<hr>
+<ul class="list-group">
+    <!-- Para poder utilizar 'routerLink' DEBEMOS IMPORTAR EL MODULO 'RouterModule' EN NUESTRO MODULO 'Shared.module.ts' -->
+    <!--El atributo 'routerLinkActive' NOS PERMITE COLOCAR UNA O MAS CLASES DE CSS CUANDO ESTEMOS EN LA RUTA INDICADA.
+    EN ESTE CASO, CUANDO ENTRAMOS A LA URL DEL HOME PAGE, PODREMOS OBSERVAR QUE SE HA ACTIVADO UNA CLASE DE BOOTSTRAP LLAMADA 'active' EL CUAL CAMBIA AL COLOR AZUL EL BACKGROUD DEL 'li' SELECIONADO -->
+    <!-- LA PROPIEDAD ' [routerLinkActiveOptions]' AGREGA LAS CLASES SOLO CUANDO LA URL COINDICA EXACTAMENTE CON EL ELNLACE PROPORCIONADO EN EL ATRIBUTO 'routerLink'-->
+    <li class="list-group-item"
+    routerLink = ""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact:true}"
+    >
+    Home Page
+    </li>
+    <li class="list-group-item" 
+    routerLink = 'about'
+    routerLinkActive="active">
+    About Page
+    </li>
+
+    <li class="list-group-item" 
+    routerLink = 'contact'
+    routerLinkActive="active">
+    Contact Page
+    </li>
+    
+</ul>
