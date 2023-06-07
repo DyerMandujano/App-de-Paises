@@ -19,7 +19,13 @@ const routes: Routes = [
         component: ContactPageComponent     
     },
     {
-        path:'countries'
+        //*PARA ACCEDER A LAS RUTAS HIJAS UTILIZAMOS UN LazyLoad(CARGA PEREZOSA)
+        //TENEMOS QUE ASIGNAR UNA RUTA(que en este caso es 'countries') PARA PODER ACCEDER AL MODULO EN DONDE SE ENCUENTRAN LAS DEMAS RUTAS HIJAS.
+        path:'countries',
+        //?PARA ELLO UTILIZAMOS LA PROPIEDAD 'loadChildren', EN EL CUAL TENDRA UNA PROMESA 'import' Y COMO ARGUMENTO LE DEBEMOS PASAR EL 'path' EN DONDE SE ENCUENTRA EL MODULO QUE QUEREMOS IMPORTAR, LUEGO DE ELLO SI LA PROMESA ESTA CORRECTA, SE UTILIZARÁ UN 'then' EN EL CUAL UTILIZANDO LA VARIABLE 'm' PODEMOS ACCEDER AL 'CountriesModule'
+        loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
+        //!NOTA: EL PATH QUE TENDRIAMOS QUE COLOCAR EN LA APLICACION SERIA LA SIGUIENTE: 'countries/by-capital'
+        //*NOTA2: EL path 'by-capital' ESTA DEFINIDO EN EL ARCHIVO countries-routing.module.ts
     },
     // EL PATH '**' HACE REFERENCIA A CUALQUIER RUTA QUE NO SE HAYA DEFINIDO ANTERIORMENTE, POR LO CUAL AUTOMATICAMENTE SERÁ DIRIGIDA AL 'home'
     {
