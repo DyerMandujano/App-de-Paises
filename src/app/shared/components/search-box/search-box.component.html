@@ -1,0 +1,8 @@
+<!-- Creamos un Input para poder personalizar el placeholder
+en cada componente que lo reutilicemos -->
+<!--El evento (keyup) sucede cuando damos un enter, el cual este evento llamara al metodo 'BusquedaPorCapital' el cual tiene como parametro el valor pasado por el input es por ello que utilizamos una referencia local llamada '#txtInput' para poder acceder a las propiedades del input y mediante su propiedad 'value' obtener su valor de este input -->
+<input type="text"
+        [placeholder]="placeholderInput"
+        class="form-control"
+        (keyup.enter)="BusquedaPorCapital(txtInput.value)"
+        #txtInput>

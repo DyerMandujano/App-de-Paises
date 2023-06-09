@@ -6,10 +6,10 @@ import { ContactPageComponent } from './shared/pages/contact-page/contact-page.c
 
 //DEFINICION PARA CADA UNA DE LAS RUTAS
 const routes: Routes = [
-    {
-        path: '',
-        component: HomePageComponent   
-    },
+    // {
+    //     path: '',
+    //     component: HomePageComponent   
+    // },
     {
         path: 'about',
         component: AboutPageComponent   
@@ -27,10 +27,11 @@ const routes: Routes = [
         //!NOTA: EL PATH QUE TENDRIAMOS QUE COLOCAR EN LA APLICACION SERIA LA SIGUIENTE: 'countries/by-capital'
         //*NOTA2: EL path 'by-capital' ESTA DEFINIDO EN EL ARCHIVO countries-routing.module.ts
     },
-    // EL PATH '**' HACE REFERENCIA A CUALQUIER RUTA QUE NO SE HAYA DEFINIDO ANTERIORMENTE, POR LO CUAL AUTOMATICAMENTE SERÁ DIRIGIDA AL 'home'
+    // EL PATH '**' HACE REFERENCIA A CUALQUIER RUTA QUE NO SE HAYA DEFINIDO ANTERIORMENTE, POR LO CUAL AUTOMATICAMENTE SERÁ DIRIGIDA A LA RUTA 'countries'
+    //!ESTA RUTA 'countries' TIENE RUTAS HIJAS LAS CUALES SE ENCUENTRAN EN EL ARCHIVO 'countries-routing.module.ts'
     {
         path:'**',
-        redirectTo:''
+        redirectTo:'countries'
     }
 ]
 

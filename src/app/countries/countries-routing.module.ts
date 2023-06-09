@@ -22,6 +22,11 @@ const routes: Routes = [
         path:'by/:id',
         component:CountryPageComponent,
     },
+    // EL PATH '**' HACE REFERENCIA A CUALQUIER RUTA QUE NO SE HAYA DEFINIDO ANTERIORMENTE, POR LO CUAL AUTOMATICAMENTE SERÁ DIRIGIDA A LA RUTA 'by-capital'
+    {
+        path:'**',
+        redirectTo:'by-capital'
+    }
 ]
 
 @NgModule({
