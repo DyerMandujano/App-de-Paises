@@ -1,1 +1,26 @@
-<p>by-country-page works!</p>
+<h2>Por Pais</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <!-- Utilizamos la propiedad 'placeholderInput' creada en el componente 'search-box' -->
+        <!--Utilizamos el Output 'OnValue'(que es un evento y se encuentra en el archivo 'search-box.component.ts'), en el cual al activar este evento llamará al metodo 'searchByCapital' Y TIENE COMO PARAMETRO '$event' PARA PODER RECIBIR EL INDICE QUE SE ESTA EMITIENDO EN EL HIJO(componente 'search-box') Y PUEDA OBTENERLO EL PADRE(componente 'by-capital-page').  -->
+    <shared-search-box 
+    placeholderInput="Buscar Por Pais"
+    (OnValue)="searchByCountry($event)"
+    ></shared-search-box>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+    <!-- Tabla de resultados -->
+
+    <countries-table [countries]="countries"></countries-table>
+
+ <!-- <ul>
+    <li *ngFor="let country of countries">
+        {{country.name.common}} - {{country.population}}
+    </li>
+</ul>  -->
+    </div>
+</div>
